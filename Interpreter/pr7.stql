@@ -1,0 +1,11 @@
+CONSTRUCT 
+{ 
+    ?foosubj ?foopred ?fooobj
+}
+FROM foo.ttl
+WHERE
+{
+    <http://www.cw.org/problem7/#subject> <http://www.cw.org/problem7/#predicate> ?fooobj 
+    FILTER regex(?fooobj, ?fooobj == 0, ?fooobj == -1)
+
+}

@@ -1,0 +1,10 @@
+CONSTRUCT 
+{ 
+    ?foosub ?foopred ?fooobj 
+}
+FROM bar.ttl
+WHERE
+{
+    ?foosub ?foopred ?fooobj
+    FILTER regex(?fooobj, ?fooobj != 3 or ?fooobj == 4)
+}

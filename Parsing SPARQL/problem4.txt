@@ -1,0 +1,19 @@
+CONSTRUCT 
+{ 
+    ?barsub ?barpred ?barobj 
+}
+FROM bar.ttl
+WHERE
+{
+    ?barsub ?barpred ?barobj FILTER ASK { FROM foo.ttl WHERE { ?foosub ?foopred ?fooobj } }
+}
+UNION
+CONSTRUCT 
+{ 
+    ?foosub ?foopred ?fooobj
+}
+FROM foo.ttl
+WHERE
+{
+    ?foosub ?foopred ?fooobj FILTER ASK { FROM bar.ttl WHERE { ?barsub ?barpred ?barobj } }
+}

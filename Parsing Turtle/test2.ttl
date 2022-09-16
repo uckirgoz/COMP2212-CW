@@ -1,0 +1,3 @@
+@base <http://www.cw.org/> .
+
+<http://example.org/#spiderman> <http://www.perceive.net/schemas/relationship/enemyOf> <http://example.org/#greengoblin>; <http://xmlns.com/foaf/0.1/name> "Spiderman" .

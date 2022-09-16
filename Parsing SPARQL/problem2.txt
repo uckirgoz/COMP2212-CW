@@ -1,0 +1,9 @@
+CONSTRUCT 
+{ 
+    ?all ?foopred ?all
+}
+FROM foo.ttl
+WHERE
+{
+    <http://www.cw.org/#problem2> ?foopred true 
+}

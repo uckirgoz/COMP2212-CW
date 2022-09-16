@@ -1,0 +1,29 @@
+CONSTRUCT 
+{ 
+    ?fooobj ?all ?all
+}
+FROM foo.ttl
+WHERE
+{
+    ?fooobj <http://www.cw.org/problem3/#predicate2> ?all
+}
+UNION
+CONSTRUCT 
+{ 
+    ?fooobj ?all ?all
+}
+FROM foo.ttl
+WHERE
+{
+    ?fooobj <http://www.cw.org/problem3/#predicate1> ?all
+}
+UNION
+CONSTRUCT 
+{ 
+    ?fooobj ?all ?all
+}
+FROM foo.ttl
+WHERE
+{
+    ?fooobj <http://www.cw.org/problem3/#predicate3> ?all
+}   

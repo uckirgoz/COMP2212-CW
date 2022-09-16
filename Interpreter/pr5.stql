@@ -1,0 +1,33 @@
+CONSTRUCT 
+{ 
+    ?foosuboutofrange <http://www.cw.org/problem5/#inRange> false  
+}
+FROM foo.ttl
+WHERE
+{
+    ?foosuboutofrange ?foopredoutofrange ?fooobjoutofrange
+    FILTER regex(?fooobjoutofrange, ?fooobjoutofrange < 0)
+}
+UNION
+CONSTRUCT 
+{ 
+    ?foosuboutofrange <http://www.cw.org/problem5/#inRange> false  
+}
+FROM foo.ttl
+WHERE
+{
+    ?foosuboutofrange ?foopredoutofrange ?fooobjoutofrange
+    FILTER regex(?fooobjoutofrange, ?fooobjoutofrange > 99)
+}
+UNION
+CONSTRUCT 
+{ 
+    ?foosubinrange ?foopredinrange ?fooobjinrange + 1,
+    ?foosubinrange <http://www.cw.org/problem5/#inRange> true
+}
+FROM foo.ttl
+WHERE
+{
+    ?foosubinrange ?foopredinrange ?fooobjinrange
+    FILTER regex(?fooobjinrange, ?fooobjinrange < 100, ?fooobjinrange > -1)
+}
